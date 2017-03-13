@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href='{{ path('homepage') }}'> Back to Book List </a>
+        <table border='1'>
+            <tr>
+                <td>
+                    {{ Book.getName() }}
+                    {% if Book.getSeries() %}
+                        ( {{ Book.getSeries() }} )
+                    {% endif %}
+                </td>
+                <td>
+                    {% if Book.getOriginalName() %}
+                        {{ Book.getOriginalName() }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td> by {{ Book.getAuthor() }} </td><td> First published {{ Book.getYear() }} </td>
+            </tr>
+            <tr>
+                <td> Genre: {{ Book.getGenre() }} </td><td> ISBN: {{ Book.getISBN() }} </td>
+            </tr>
+            <tr>
+                <td colspan='2'> {{ Book.getAbout() }} </td>
+            </tr>
+        </table>
+    </body>
+</html>
